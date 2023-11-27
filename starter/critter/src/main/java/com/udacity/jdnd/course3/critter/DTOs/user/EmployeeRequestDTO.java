@@ -1,9 +1,5 @@
 package com.udacity.jdnd.course3.critter.DTOs.user;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -12,11 +8,32 @@ import java.util.Set;
  * Represents a request to find available employees by skills. Does not map
  * to the database directly.
  */
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+
 public class EmployeeRequestDTO {
     private Set<EmployeeSkill> skills;
     private LocalDate date;
+
+    public Set<EmployeeSkill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(Set<EmployeeSkill> skills) {
+        this.skills = skills;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public EmployeeRequestDTO(Set<EmployeeSkill> skills, LocalDate date) {
+        this.skills = skills;
+        this.date = date;
+    }
+
+    public EmployeeRequestDTO() {
+    }
 }
