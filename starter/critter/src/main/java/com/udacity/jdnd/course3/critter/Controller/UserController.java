@@ -122,7 +122,7 @@ public class UserController {
     @PutMapping("/employee/{employeeId}")
     public void setAvailability(@RequestBody Set<DayOfWeek> daysAvailable, @PathVariable long employeeId) {
         try {
-            employeeService.setDaysAvailable(employeeId, daysAvailable);
+            employeeService.setAvailability(employeeId, daysAvailable);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

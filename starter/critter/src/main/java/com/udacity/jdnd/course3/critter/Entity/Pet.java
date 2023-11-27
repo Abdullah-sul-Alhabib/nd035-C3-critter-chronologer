@@ -14,13 +14,14 @@ import java.util.List;
  * The type Pet.
  */
 @Entity
+@Table
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Pet {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private PetType type;
     private String name;
@@ -29,6 +30,6 @@ public class Pet {
     private Customer owner;
     private LocalDate birthDate;
     private String notes;
-    @ManyToMany
+    @ManyToMany(targetEntity = Schedule.class)
     private List<Schedule> schedules;
 }

@@ -72,7 +72,7 @@ public class EmployeeService {
      * @param id            the id
      * @param daysAvailable the days available
      */
-    public void setDaysAvailable(Long id, Set<DayOfWeek> daysAvailable) {
+    public void setAvailability(Long id, Set<DayOfWeek> daysAvailable) {
         Employee employee = employeeRepository.getOne(id);
         employee.setDaysAvailable(daysAvailable);
 

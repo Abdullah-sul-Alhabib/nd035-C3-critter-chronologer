@@ -15,19 +15,20 @@ import java.util.Set;
  * The type Employee.
  */
 @Entity
+@Table
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class Employee {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     @ElementCollection
     private Set<EmployeeSkill> skills;
     @ElementCollection
     private Set<DayOfWeek> daysAvailable;
-    @ManyToMany
+    @ManyToMany(targetEntity = Schedule.class)
     private List<Schedule> schedules;
 }
